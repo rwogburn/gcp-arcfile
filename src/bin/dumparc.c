@@ -26,7 +26,7 @@ int main (int argc, char *argv[])
 
     if (argc < 2)
     {
-        printf ("readarc takes at least one argument.");
+        printf ("dumparc takes at least one argument.\n");
         return -1;
     }
 
@@ -44,13 +44,13 @@ int main (int argc, char *argv[])
       r = txt2utc (argv[2], filt.t1);
       if (r != 0)
       {
-        printf ("could not parse UTC time 1!");
+        printf ("could not parse UTC time 1!\n");
         return -1;
       }
       r = txt2utc (argv[3], filt.t2);
       if (r != 0)
       {
-        printf ("could not parse UTC time 2!");
+        printf ("could not parse UTC time 2!\n");
         return -1;
       }
       DEBUG ("Selecting on time range (%lu,%lu) - (%lu,%lu)\n",
