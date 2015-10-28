@@ -181,8 +181,8 @@ int pyc_wrap_timestreams (struct dataset * ds, PyObject ** D)
       ds->buf[i].rb->map, ds->buf[i].rb->board, ds->buf[i].rb->regblock,
       ds->buf[i].rb->spf * ds->num_frames, numchan,
       ds->buf[i].numframes, (long int)ds->buf[i].bufsize);
-    dims[0] = ds->buf[i].rb->spf * ds->num_frames;
-    dims[1] = numchan;
+    dims[1] = ds->buf[i].rb->spf * ds->num_frames;
+    dims[0] = numchan;
     tmp = PyArray_New (&PyArray_Type, 2, dims, typenum, NULL, NULL, 0, 0, NULL);
     if (tmp == NULL) {
       PR ("Failed!");
