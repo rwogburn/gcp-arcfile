@@ -13,7 +13,7 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#define DO_DEBUG_DATASET 1
+#define DO_DEBUG_DATASET 0
 
 #include "databuf.h"
 
