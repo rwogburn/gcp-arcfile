@@ -1,0 +1,13 @@
+*pyc
+*swp
+build
+*so
+*ipynb
+pshyt.c
+ipython_log*
+doc/.build
+doc/generated
+*~
+arcfile.egg-info
+dist
+.eggs
