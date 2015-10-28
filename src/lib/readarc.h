@@ -6,6 +6,7 @@
 #include <stdint.h>
 #include "namelist.h"
 #include "dataset.h"
+#include "utcrange.h"
 
 #define ARC_OK		0x00
 #define ARC_ERR_NOFILE	0x01

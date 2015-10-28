@@ -3,7 +3,7 @@ import numpy as np
 
 module1 = Extension('readarc',
                     sources = ['pyc_readarc.c'],
-                    library_dirs = ['../src'],
+                    library_dirs = ['../src/lib'],
                     libraries = ['readarc'])
 
 setup (name = 'readarc',
