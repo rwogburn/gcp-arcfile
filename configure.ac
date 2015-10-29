@@ -1,7 +1,7 @@
 # Add the static library to configure.ac
 
-AC_PREREQ([2.69])
-AC_INIT([readarc], [0.1], [reuben@ugcs.caltech.edu])
+AC_PREREQ([2.60])
+AC_INIT([arcfile], [0.1], [rwogburn@gmail.com])
 AC_CONFIG_SRCDIR([src/lib/readarc.c])
 # AC_CONFIG_HEADERS([config.h])
 AM_INIT_AUTOMAKE
@@ -42,7 +42,7 @@ if test x"$python_ext" = xyes; then
         if test x"$PYTHON" = x; then
                 AC_MSG_ERROR([Can't build python extension, as python executable could not be found])
         fi
-
+        CFLAGS="$CFLAGS -fPIC"
         # AC_PYTHON_DEVEL
 fi
 
