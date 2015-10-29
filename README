@@ -1,0 +1,56 @@
+Arcfile: Tools for working with low-level data from GCP
+
+The arcfile package is a library for reading raw data from telescopes
+using the Generic Control Program (GCP).  Examples are POLARBEAR,
+the BICEP/Keck series of experiments and the South Pole Telescope
+(see Story et al., http://arxiv.org/abs/1210.4966).  GCP writes data
+in a frame-based file format known as an arc file ("archive file").
+The arcfile package contains C code for efficiently reading compressed
+or uncompressed arc files; binary executables to export arc file
+data to other formats; and interfaces to work with arc file data in
+Matlab, Octave, and Python.
+
+This README applies to initial unversioned dump of the arcfile
+package into Github.
+
+Arc file support:
+---------------------
+
+The arcfile code is known to work with arc files written by the
+BICEP series of experiments, BICEP1, BICEP2, the Keck Array, and
+BICEP3.  It has not been tested on arc files from other experiments.
+It can read gzipped arc files directly.  There is some support for
+other compression types, although these are not currently well
+integrated into the build system.
+
+Platforms supported:
+---------------------
+
+The arcfile package supports Linux and other Unix-like systems such
+as Mac OSX.  Building on Windows should be possible with MinGW, but
+this has not been attempted.
+
+Command-line utilities:
+---------------------
+
+* arc2txt: export to plain text
+* arc2dir: export to dirfile (http://getdata.sourceforge.net/dirfile.html)
+* dumparc: export to hex-encoded values (historical)
+* arcfile: export to multiple formats
+
+Matlab and Octave interfaces:
+--------------------
+
+The C library is wrapped with a MEX function, readarc.  Rather than using
+this directly, the M-file function load_arc should be used to load arc file
+data into Matlab or Octave.
+
+Python interface:
+--------------------
+
+The arcfile package provides the Python module arcfile, which can be used
+to load arc file data into Python (tested with 2.7) with numpy.
+
+Development:
+--------------------
+The code is hosted on GitHub at https://github.com/rwogburn/gcp-arcfile.
