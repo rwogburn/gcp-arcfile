@@ -306,15 +306,15 @@ static PyObject * pyc_readarc (PyObject * self, PyObject * args)
     return D;
 }
 
-static PyMethodDef readarcMethods[] = {
+static PyMethodDef arcfileMethods[] = {
     {"readarc", pyc_readarc, METH_VARARGS,
      "Read in an arc file."},
     {NULL, NULL, 0, NULL}        /* Sentinel */
 };
 
-PyMODINIT_FUNC initreadarc(void)
+PyMODINIT_FUNC initarcfile(void)
 {
-    (void) Py_InitModule("readarc", readarcMethods);
+    (void) Py_InitModule("arcfile", arcfileMethods);
     import_array();
 }
 
