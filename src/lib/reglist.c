@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include <string.h>
 #include "reglist.h"
-#include "endian.h"
+#include "arc_endian.h"
 #include "namelist.h"
 #include "readarc.h"
 

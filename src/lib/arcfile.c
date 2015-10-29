@@ -7,7 +7,7 @@
 #include "dataset.h"
 #include "namelist.h"
 #include "reglist.h"
-#include "endian.h"
+#include "arc_endian.h"
 #include "readarc.h"
 
 #if DO_DEBUG_ARCFILE

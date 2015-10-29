@@ -5,7 +5,7 @@ noinst_HEADERS = \
 	arcfile.h \
 	databuf.h \
 	dataset.h \
-	endian.h \
+	arc_endian.h \
 	fileset.h \
 	handlesig.h \
 	namelist.h \
@@ -19,7 +19,7 @@ libreadarc_a_SOURCES = \
         arcfile.c \
         databuf.c \
         dataset.c \
-        endian.c \
+        arc_endian.c \
         fileset.c \
         handlesig.c \
         namelist.c \
