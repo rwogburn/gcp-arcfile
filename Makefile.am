@@ -18,9 +18,15 @@ else
 additional_dist_subdirs += mex_ext
 endif
 
+if BUILD_BIN
+BINDIR = src/bin
+else
+additional_dist_subdirs += src/bin
+endif
+
 SUBDIRS = \
 	src/lib \
-	src/bin \
+	$(BINDIR) \
 	$(OCTSUBDIR) \
         $(PYSUBDIR) \
         $(MEXSUBDIR)

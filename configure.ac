@@ -24,6 +24,21 @@ AC_CHECK_HEADERS([stdio.h])
 AC_TYPE_SIZE_T
 
 # --------------------------------------------
+# Check if we should build the binary executables
+# --------------------------------------------
+AC_ARG_ENABLE(
+[bin],
+[  --enable-bin           Enable build of binary executables (default: enabled)],
+[case "${enableval}" in
+  yes) build_bin=yes ;;
+   no) build_bin=no ;;
+    *) AC_MSG_ERROR([bad value of ${enableval} for --enable-bin option]) ;;
+esac],
+build_bin=yes)
+
+AM_CONDITIONAL(BUILD_BIN, test x"$build_bin" = xyes)
+
+# --------------------------------------------
 # Check if we should build python extension
 # --------------------------------------------
 AC_PATH_PROG(PYTHON, python)
@@ -34,7 +49,7 @@ AC_ARG_ENABLE(
 [case "${enableval}" in
   yes) python_ext=yes ;;
    no) python_ext=no ;;
-    *) AC_MSG_ERROR([bad value ${enableval} for --enable-python-ext option]) ;;
+    *) AC_MSG_ERROR([bad value ${enableval} for --enable-python option]) ;;
 esac],
 python_ext=no)
 
@@ -59,7 +74,7 @@ AC_ARG_ENABLE(
 [case "${enableval}" in
   yes) octave_ext=yes ;;
    no) octave_ext=no ;;
-    *) AC_MSG_ERROR([bad value ${enableval} for --enable-octave-ext option]) ;;
+    *) AC_MSG_ERROR([bad value ${enableval} for --enable-octave option]) ;;
 esac],
 octave_ext=no)
 
@@ -84,7 +99,7 @@ AC_ARG_ENABLE(
 [case "${enableval}" in
   yes) mex_ext=yes ;;
    no) mex_ext=no ;;
-    *) AC_MSG_ERROR([bad value ${enableval} for --enable-matlab-ext option]) ;;
+    *) AC_MSG_ERROR([bad value ${enableval} for --enable-matlab option]) ;;
 esac],
 mex_ext=no)
 
