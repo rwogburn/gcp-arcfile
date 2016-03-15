@@ -159,7 +159,7 @@ int pyc_wrap_timestreams (struct dataset * ds, PyObject ** D)
 
       /* Just treat UTC times as a UINT64, for now. */
       case GCP_REG_UTC:
-        typenum = NPY_FLOAT64;
+	typenum = NPY_UINT64;
         break;
 
       default: 
