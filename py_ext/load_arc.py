@@ -100,7 +100,8 @@ def load_arc(arcdir, trange=None, reglist=None):
     # Unpack timestamps.
     data = unpack_utc(data)
     # Select only data in time range.
-    data = select_data(data, trange)
+    if data['antenna0']['time']['utcslow'].size > 0:
+        data = select_data(data, trange)
     # Done.
     return data
 
